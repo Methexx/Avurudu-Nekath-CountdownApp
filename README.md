@@ -29,7 +29,7 @@ The app includes traditional *Nekath* (auspicious times), real-time countdown, a
 
 1. **Clone the repo**
    bash
-   git clone https://github.com/methexx/Avurudu-Nekath-CountdownApp.git
+   git clone https://github.com/methexx/Avurudu-Nekath-CountdownApp.git<br>
    cd Avurudu-Nekath-CountdownApp
 
 ## 🚀Install dependencies
