@@ -13,7 +13,7 @@ class _HomeScreenState extends State<HomeScreen> {
   late Timer _timer;
   Duration _remaining = Duration.zero;
 
-  final DateTime targetDateTime = DateTime(2025, 4, 14, 7, 42);
+  final DateTime targetDateTime = DateTime(2025, 4, 14, 3, 21);
 
   @override
   void initState() {
@@ -109,7 +109,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
                 // Smaller text above countdown
                 const Text(
-                  'අලුත් අවුරුදු උදාවට තව දින :',
+                  'අලුත් අවුරුදු උදාවට තව',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 18,
