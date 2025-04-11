@@ -48,7 +48,7 @@ class NekathDetailScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 24),
                   const Text(
-                    "තව දින :",
+                    "තව",
                     style: TextStyle(fontSize: 20, color: Colors.white),
                   ),
                   const SizedBox(height: 10),
