@@ -12,7 +12,7 @@ class NekathListScreen extends StatelessWidget {
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         title: const Text("නැකත් පත්‍රය"),
-        backgroundColor: Colors.transparent,
+        backgroundColor: const Color.fromARGB(0, 248, 245, 245),
         elevation: 0,
       ),
       body: Stack(

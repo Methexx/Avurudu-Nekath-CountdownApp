@@ -6,8 +6,8 @@
         
         <!-- ✅ Disable Impeller and use Skia -->
         <meta-data
-            android:name="flutter.renderer"
-            android:value="skia" />
+            android:name="io.flutter.embedding.android.EnableImpeller"
+            android:value="false" />
 
         <activity
             android:name=".MainActivity"
