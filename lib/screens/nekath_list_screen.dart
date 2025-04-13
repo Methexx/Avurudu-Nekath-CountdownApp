@@ -47,7 +47,7 @@ class NekathListScreen extends StatelessWidget {
                   } else if (nekath.title == "අළුත් අවුරුදු උදාව🌞") {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const DawnOfTheNewYearScreen()),
+                      MaterialPageRoute(builder: (context) => const DawnNewYearScreen()),
                     );
                   } else if (nekath.title == "පුණ්‍ය කාලය🌞") {
                     Navigator.push(
@@ -57,12 +57,12 @@ class NekathListScreen extends StatelessWidget {
                   } else if (nekath.title == "අහාර පිසීම🌞") {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const PreparationOfMealsScreen()),
+                      MaterialPageRoute(builder: (context) => const PrepareMealsScreen()),
                     );
                   } else if (nekath.title == "වැඩ ඇල්ලීම, ගණුදෙනු කිරීම හා ආහාර අනුභවය🌞") {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const CommencingWorkScreen()),
+                      MaterialPageRoute(builder: (context) => const CommenceWorkScreen()),
                     );
                   } else if (nekath.title == "හිත තෙල් ගෑම🌞") {
                     Navigator.push(

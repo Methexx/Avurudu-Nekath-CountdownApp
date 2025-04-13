@@ -20,3 +20,4 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/bg.jpeg
+    - assets/images/avurudu_logo.png
