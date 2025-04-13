@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
+import 'new_moon_screen.dart';
+import 'bathing_old_year_screen.dart';
+import 'dawn_new_year_screen.dart';
+import 'punya_kalaya_screen.dart';
+import 'prepare_meals_screen.dart';
+import 'commence_work_screen.dart';
+import 'anointing_oil_screen.dart';
+import 'leave_for_work_screen.dart'; // Add other imports
 import '../utils/nekath_data.dart';
-import 'package:avurudu_nakath_app/screens/nekath_detail_screen.dart';
 import '../widgets/nekath_card.dart';
 
 class NekathListScreen extends StatelessWidget {
@@ -27,12 +34,47 @@ class NekathListScreen extends StatelessWidget {
               return NekathCard(
                 nekath: nekath,
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => NekathDetailScreen(nekath: nekath),
-                    ),
-                  );
+                  if (nekath.title == "නව සද බැලීම🌞") {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const NewMoonScreen()),
+                    );
+                  } else if (nekath.title == "පරණ අවුරුද්ද සදහා ස්නානය🌞") {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const BathingOldYearScreen()),
+                    );
+                  } else if (nekath.title == "අළුත් අවුරුදු උදාව🌞") {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const DawnOfTheNewYearScreen()),
+                    );
+                  } else if (nekath.title == "පුණ්‍ය කාලය🌞") {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const PunyaKalayaScreen()),
+                    );
+                  } else if (nekath.title == "අහාර පිසීම🌞") {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const PreparationOfMealsScreen()),
+                    );
+                  } else if (nekath.title == "වැඩ ඇල්ලීම, ගණුදෙනු කිරීම හා ආහාර අනුභවය🌞") {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const CommencingWorkScreen()),
+                    );
+                  } else if (nekath.title == "හිත තෙල් ගෑම🌞") {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const AnointingOilScreen()),
+                    );
+                  } else if (nekath.title == "රැකීරක්ශා සදහා පිටත්ව යාම🌞") {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const LeaveForWorkScreen()),
+                    );
+                  }
                 },
               );
             },

@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 class CountdownTimer extends StatefulWidget {
-  final DateTime? targetTime;
+  final DateTime targetTime;
 
   const CountdownTimer({super.key, required this.targetTime});
 
@@ -27,7 +27,7 @@ class _CountdownTimerState extends State<CountdownTimer> {
 
   void _updateRemaining() {
     final now = DateTime.now();
-    final diff = widget.targetTime!.difference(now);
+    final diff = widget.targetTime.difference(now); // Null check removed
     setState(() {
       _remaining = diff.isNegative ? Duration.zero : diff;
     });
