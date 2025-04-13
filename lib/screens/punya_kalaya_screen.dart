@@ -1,17 +1,42 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../widgets/countdown_timer.dart';
 
-class PunyaKalayaScreen extends StatelessWidget {
+class PunyaKalayaScreen extends StatefulWidget {
   const PunyaKalayaScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final now = DateTime.now();
-    final dateFormatted = DateFormat('dd/MM/yyyy').format(now);
-    final timeFormatted = DateFormat('hh:mm:ss a').format(now);
+  State<PunyaKalayaScreen> createState() => _PunyaKalayaScreenState();
+}
 
-    final targetTime = DateTime(2025, 4, 14, 7, 5); // Update with actual Nekath time
+class _PunyaKalayaScreenState extends State<PunyaKalayaScreen> {
+  late Timer _timer;
+  late DateTime _now;
+
+  @override
+  void initState() {
+    super.initState();
+    _now = DateTime.now();
+    _timer = Timer.periodic(const Duration(seconds: 1), (_) {
+      setState(() {
+        _now = DateTime.now();
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    _timer.cancel();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final dateFormatted = DateFormat('dd/MM/yyyy').format(_now);
+    final timeFormatted = DateFormat('hh:mm:ss a').format(_now);
+
+    final targetTime = DateTime(2025, 4, 14, 7, 5); // Actual Nekath time
 
     return Scaffold(
       extendBodyBehindAppBar: true,

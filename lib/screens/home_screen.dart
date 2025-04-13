@@ -200,11 +200,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   const Padding(
                     padding: EdgeInsets.only(top: 10),
                     child: Text(
-                      'කාලය ඉකුත්වී ඇත',
+                      'කාලය ඉකුත්වී ඇත !',
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
-                        color: Colors.redAccent,
+                        color: Colors.white,
                       ),
                     ),
                   ),
