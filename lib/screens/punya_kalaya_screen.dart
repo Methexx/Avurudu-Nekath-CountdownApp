@@ -36,7 +36,7 @@ class _PunyaKalayaScreenState extends State<PunyaKalayaScreen> {
     final dateFormatted = DateFormat('dd/MM/yyyy').format(_now);
     final timeFormatted = DateFormat('hh:mm:ss a').format(_now);
 
-    final targetTime = DateTime(2025, 4, 14, 7, 5); // Actual Nekath time
+    final targetTime = DateTime(2025, 4, 13, 08, 57); // Actual Nekath time
 
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -58,7 +58,7 @@ class _PunyaKalayaScreenState extends State<PunyaKalayaScreen> {
                   const SizedBox(height: 80),
                   const Center(
                     child: Text(
-                      "හිත තෙල් ගෑම",
+                      "පුණ්‍ය කාලය",
                       style: TextStyle(
                         fontSize: 28,
                         fontWeight: FontWeight.bold,
@@ -68,8 +68,12 @@ class _PunyaKalayaScreenState extends State<PunyaKalayaScreen> {
                   ),
                   const SizedBox(height: 20),
                   const Text(
-                    "සිංහල පසුගිය සදහසකට අනුව ශරීරය තෙල් ගාන්නා පුරුදුය. "
-                    "මේ මොහොතේ, ශරීරයේ ශක්තිය සහ පරිසරය සුවඳින් පිරිමැඳීම.",
+                    "අප්‍රේල් මස 13 වැනි ඉරිදා අපරභාග 08.57 සිට පසුදින එනම් 14 වැනි සඳුදා පූර්වභාග"
+                    " 09.45 දක්වා පුණ්‍ය කාලය බැවින් අප්‍රේල් මස 13 වැනි ඉරිදා අපරභාග 08.570 පළමුව ආහාර"
+                    " පාන ගෙන සියලු වැඩ අත්හැර ආගමික වතාවත්වල යෙදීම ද, පුණ්‍ය කාලයේ අපර කොටස එනම්"
+                    " අප්‍රේල් මස 14 වැනි සඳුදා පූර්වභාග 03.21 සිට 14 වැනි සඳුදා පූර්වභාග 09.45 දක්වා පහත දැක්වෙන"
+                    " අයුරින් ආහාර පිසීම, වැඩ ඇල්ලීම, ගනු දෙනු කිරීම හා ආහර අනුභවය ආදී නැකත් චාරිත්‍ර විධි ඉටු"
+                    " කිරීම මැනවි.",
                     style: TextStyle(
                       fontSize: 18,
                       color: Colors.white,
@@ -96,7 +100,7 @@ class _PunyaKalayaScreenState extends State<PunyaKalayaScreen> {
                   ),
                   const SizedBox(height: 30),
                   const Text(
-                    "නැකත් දක්වා වාරය",
+                    "නැකතට තවත්",
                     style: TextStyle(
                       fontSize: 20,
                       color: Colors.white70,

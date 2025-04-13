@@ -1,17 +1,42 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../widgets/countdown_timer.dart';
 
-class BathingOldYearScreen extends StatelessWidget {
+class BathingOldYearScreen extends StatefulWidget {
   const BathingOldYearScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final now = DateTime.now();
-    final dateFormatted = DateFormat('dd/MM/yyyy').format(now);
-    final timeFormatted = DateFormat('hh:mm:ss a').format(now);
+  State<BathingOldYearScreen> createState() => _BathingOldYearScreenState();
+}
 
-    final targetTime = DateTime(2025, 4, 14, 7, 5); // Update with actual Nekath time
+class _BathingOldYearScreenState extends State<BathingOldYearScreen> {
+  late Timer _timer;
+  late DateTime _now;
+
+  @override
+  void initState() {
+    super.initState();
+    _now = DateTime.now();
+    _timer = Timer.periodic(const Duration(seconds: 1), (_) {
+      setState(() {
+        _now = DateTime.now();
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    _timer.cancel();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final dateFormatted = DateFormat('dd/MM/yyyy').format(_now);
+    final timeFormatted = DateFormat('hh:mm:ss a').format(_now);
+
+    final targetTime = DateTime(2025, 4, 13, 7, 13); // Actual Nekath time
 
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -33,7 +58,7 @@ class BathingOldYearScreen extends StatelessWidget {
                   const SizedBox(height: 80),
                   const Center(
                     child: Text(
-                      "හිත තෙල් ගෑම",
+                      "පරණ අවුරුද්ද සදහා ස්නානය",
                       style: TextStyle(
                         fontSize: 28,
                         fontWeight: FontWeight.bold,
@@ -43,8 +68,7 @@ class BathingOldYearScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
                   const Text(
-                    "සිංහල පසුගිය සදහසකට අනුව ශරීරය තෙල් ගාන්නා පුරුදුය. "
-                    "මේ මොහොතේ, ශරීරයේ ශක්තිය සහ පරිසරය සුවඳින් පිරිමැඳීම.",
+                    "අප්‍රේල් මස 13 වැනි ඉරිදා දින දිඹුල්පත් යුෂ මිශ නානු ගා ස්නානය කොට ඉෂ්ට දේවතා අනුස්මරණයෙහි යෙදී වාසය මැනවි.",
                     style: TextStyle(
                       fontSize: 18,
                       color: Colors.white,
@@ -71,7 +95,7 @@ class BathingOldYearScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 30),
                   const Text(
-                    "නැකත් දක්වා වාරය",
+                    "නැකතට තවත්",
                     style: TextStyle(
                       fontSize: 20,
                       color: Colors.white70,

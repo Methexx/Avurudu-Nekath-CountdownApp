@@ -1,17 +1,42 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../widgets/countdown_timer.dart';
 
-class NewMoonScreen extends StatelessWidget {
+class NewMoonScreen extends StatefulWidget {
   const NewMoonScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final now = DateTime.now();
-    final dateFormatted = DateFormat('dd/MM/yyyy').format(now);
-    final timeFormatted = DateFormat('hh:mm:ss a').format(now);
+  State<NewMoonScreen> createState() => _NewMoonScreenState();
+}
 
-    final targetTime = DateTime(2025, 4, 14, 7, 5); // Update with actual Nekath time
+class _NewMoonScreenState extends State<NewMoonScreen> {
+  late Timer _timer;
+  late DateTime _now;
+
+  @override
+  void initState() {
+    super.initState();
+    _now = DateTime.now();
+    _timer = Timer.periodic(const Duration(seconds: 1), (_) {
+      setState(() {
+        _now = DateTime.now();
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    _timer.cancel();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final dateFormatted = DateFormat('dd/MM/yyyy').format(_now);
+    final timeFormatted = DateFormat('hh:mm:ss a').format(_now);
+
+    final targetTime = DateTime(2025, 4, 14, 7, 5); // Update as needed
 
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -33,7 +58,7 @@ class NewMoonScreen extends StatelessWidget {
                   const SizedBox(height: 80),
                   const Center(
                     child: Text(
-                      "හිත තෙල් ගෑම",
+                      "නව සද බැලීම",
                       style: TextStyle(
                         fontSize: 28,
                         fontWeight: FontWeight.bold,
@@ -43,8 +68,8 @@ class NewMoonScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
                   const Text(
-                    "සිංහල පසුගිය සදහසකට අනුව ශරීරය තෙල් ගාන්නා පුරුදුය. "
-                    "මේ මොහොතේ, ශරීරයේ ශක්තිය සහ පරිසරය සුවඳින් පිරිමැඳීම.",
+                    "අභිනව චන්ද්‍ර වර්ශය සදහා මාර්තු මස 30 වැනි  ඉරිදා දින ද අභිනව සූර්‍ය වර්ෂය සදහා මැයි මස 01 වැනි බ්‍රහස්පතින්දා දින ද නව සද "
+                    "බැලීම මැනවි ..",
                     style: TextStyle(
                       fontSize: 18,
                       color: Colors.white,
@@ -71,7 +96,7 @@ class NewMoonScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 30),
                   const Text(
-                    "නැකත් දක්වා වාරය",
+                    "නැකතට තවත්",
                     style: TextStyle(
                       fontSize: 20,
                       color: Colors.white70,
