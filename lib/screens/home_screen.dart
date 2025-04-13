@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'nekath_list_screen.dart'; 
+import 'nekath_list_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -38,17 +38,38 @@ class _HomeScreenState extends State<HomeScreen> {
     super.dispose();
   }
 
-  String _formatDuration(Duration duration) {
-    final days = duration.inDays;
-    final hours = duration.inHours % 24;
-    final minutes = duration.inMinutes % 60;
-    final seconds = duration.inSeconds % 60;
+  Widget _buildTimeBlock(String value, String label) {
+    return Column(
+      children: [
+        Text(
+          value,
+          style: const TextStyle(
+            fontSize: 36,
+            fontWeight: FontWeight.bold,
+            color: Colors.white, // changed from orange
+          ),
+        ),
 
-    return '${days}d ${hours}h ${minutes}m ${seconds}s';
+        const SizedBox(height: 4),
+        Text(
+          label,
+          style: const TextStyle(
+            fontSize: 16,
+            color: Colors.white, // changed from gray
+          ),
+        ),
+      ],
+    );
   }
 
   @override
   Widget build(BuildContext context) {
+    final days = _remaining.inDays.toString().padLeft(2, '0');
+    final hours = (_remaining.inHours % 24).toString().padLeft(2, '0');
+    final minutes = (_remaining.inMinutes % 60).toString().padLeft(2, '0');
+    final seconds = (_remaining.inSeconds % 60).toString().padLeft(2, '0');
+    final isOver = _remaining == Duration.zero;
+
     return Scaffold(
       body: Stack(
         children: [
@@ -62,12 +83,20 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
 
-          // Centered content
-          Center(
+          SafeArea(
             child: Column(
-              mainAxisSize: MainAxisSize.min,
               children: [
-                // Sinhala greeting
+                const SizedBox(height: 20),
+
+                // Logo
+                Image.asset(
+                  'assets/images/avurudu_logo.png',
+                  height: 120,
+                ),
+
+                const SizedBox(height: 20),
+
+                // Greetings
                 const Text(
                   'සුභ අලුත් අවුරුද්දක් වේවා!',
                   textAlign: TextAlign.center,
@@ -84,10 +113,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                 ),
-
                 const SizedBox(height: 6),
-
-                // Tamil greeting
                 const Text(
                   'புத்தாண்டு வாழ்த்துக்கள்!',
                   textAlign: TextAlign.center,
@@ -105,12 +131,26 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
 
-                const SizedBox(height: 40), // Increased spacing here
+                const Text(
+                  'Happy New Year!',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 26,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    shadows: [
+                      Shadow(
+                        blurRadius: 4,
+                        color: Colors.black54,
+                        offset: Offset(1, 1),
+                      )
+                    ],
+                  ),
+                ),
 
-                // Smaller text above countdown
+                const SizedBox(height: 40),
                 const Text(
                   'අලුත් අවුරුදු උදාවට තව',
-                  textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w600,
@@ -127,45 +167,73 @@ class _HomeScreenState extends State<HomeScreen> {
 
                 const SizedBox(height: 10),
 
-                // Countdown timer
+                // Styled countdown timer
+                // Styled countdown timer with transparent background and gray text
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                  padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.5),
+                    color: Colors.transparent,
                     borderRadius: BorderRadius.circular(12),
                   ),
-                  child: Text(
-                    _formatDuration(_remaining),
-                    style: const TextStyle(
-                      fontSize: 22,
-                      color: Colors.yellowAccent,
-                      fontWeight: FontWeight.bold,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      _buildTimeBlock(days, 'දින'),
+                      const SizedBox(width: 8),
+                      const Text(":", style: TextStyle(fontSize: 28, color: Colors.grey)),
+                      const SizedBox(width: 8),
+                      _buildTimeBlock(hours, 'පැය'),
+                      const SizedBox(width: 8),
+                      const Text(":", style: TextStyle(fontSize: 28, color: Colors.grey)),
+                      const SizedBox(width: 8),
+                      _buildTimeBlock(minutes, 'මිනිත්තු'),
+                      const SizedBox(width: 8),
+                      const Text(":", style: TextStyle(fontSize: 28, color: Colors.grey)),
+                      const SizedBox(width: 8),
+                      _buildTimeBlock(seconds, 'තත්පර'),
+                    ],
+                  ),
+                ),
+
+
+                if (isOver)
+                  const Padding(
+                    padding: EdgeInsets.only(top: 10),
+                    child: Text(
+                      'කාලය ඉකුත්වී ඇත',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.redAccent,
+                      ),
                     ),
                   ),
-                ),
 
-                const SizedBox(height: 30),
+                const Spacer(),
 
-                // Navigate button
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color.fromARGB(255, 40, 39, 38),
-                    padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                // Button
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 24),
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color.fromARGB(255, 40, 39, 38),
+                      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const NekathListScreen(),
+                        ),
+                      );
+                    },
+                    child: const Text(
+                      'නැකත් පත්‍රය',
+                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
+                    ),
                   ),
-                  onPressed: () {
-                   Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                   builder: (context) => const NekathListScreen(),
-                  ),
-                  );
-                  },
-                  child: const Text(
-                    'නැකත් පත්‍රය',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
-                  ),
-                ),
+                )
               ],
             ),
           ),

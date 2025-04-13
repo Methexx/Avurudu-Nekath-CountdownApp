@@ -47,7 +47,7 @@ class _CountdownTimerState extends State<CountdownTimer> {
           style: const TextStyle(
             fontSize: 36,
             fontWeight: FontWeight.bold,
-            color: Color(0xFFFF9800), // Orange color
+            color: Color(0xFFFF9800), // Orange
           ),
         ),
         const SizedBox(height: 4),
@@ -69,30 +69,46 @@ class _CountdownTimerState extends State<CountdownTimer> {
     final minutes = (_remaining.inMinutes % 60).toString().padLeft(2, '0');
     final seconds = (_remaining.inSeconds % 60).toString().padLeft(2, '0');
 
-    return Container(
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: Colors.transparent,
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          _buildTimeBlock(days, 'දින'),
-          const SizedBox(width: 8),
-          const Text(":", style: TextStyle(fontSize: 28, color: Color(0xFFFF9800))),
-          const SizedBox(width: 8),
-          _buildTimeBlock(hours, 'පැය'),
-          const SizedBox(width: 8),
-          const Text(":", style: TextStyle(fontSize: 28, color: Color(0xFFFF9800))),
-          const SizedBox(width: 8),
-          _buildTimeBlock(minutes, 'මිනිත්තු'),
-          const SizedBox(width: 8),
-          const Text(":", style: TextStyle(fontSize: 28, color: Color(0xFFFF9800))),
-          const SizedBox(width: 8),
-          _buildTimeBlock(seconds, 'තත්පර'),
-        ],
-      ),
+    return Column(
+      children: [
+        Container(
+          padding: const EdgeInsets.all(16),
+          decoration: BoxDecoration(
+            color: Colors.transparent,
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              _buildTimeBlock(days, 'දින'),
+              const SizedBox(width: 8),
+              const Text(":", style: TextStyle(fontSize: 28, color: Color(0xFFFF9800))),
+              const SizedBox(width: 8),
+              _buildTimeBlock(hours, 'පැය'),
+              const SizedBox(width: 8),
+              const Text(":", style: TextStyle(fontSize: 28, color: Color(0xFFFF9800))),
+              const SizedBox(width: 8),
+              _buildTimeBlock(minutes, 'මිනිත්තු'),
+              const SizedBox(width: 8),
+              const Text(":", style: TextStyle(fontSize: 28, color: Color(0xFFFF9800))),
+              const SizedBox(width: 8),
+              _buildTimeBlock(seconds, 'තත්පර'),
+            ],
+          ),
+        ),
+        if (_remaining == Duration.zero)
+          const Padding(
+            padding: EdgeInsets.only(top: 12),
+            child: Text(
+              'කාලය ඉකුත්වී ඇත',
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+                color: Colors.red,
+              ),
+            ),
+          ),
+      ],
     );
   }
 }
