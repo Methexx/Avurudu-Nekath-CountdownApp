@@ -58,7 +58,7 @@ class _PrepareMealsScreenState extends State<PrepareMealsScreen> {
                   const SizedBox(height: 80),
                   const Center(
                     child: Text(
-                      "වැඩ ඇල්ලීම , ගනුදෙනු කිරීම හා ආහාර අනුභවය",
+                      "වැඩ ඇල්ලීම , ගනුදෙනු කිරීම හා ආහාර අනුභවය👷‍♀💸🍽",
                       style: TextStyle(
                         fontSize: 28,
                         fontWeight: FontWeight.bold,

@@ -58,7 +58,7 @@ class _CommenceWorkScreenState extends State<CommenceWorkScreen> {
                   const SizedBox(height: 80),
                   const Center(
                     child: Text(
-                      "රැකි රක්ෂා සදහා පිටත්ව යෑම",
+                      "වැඩ ඇල්ලීම , ගනුදෙනු කිරීම සහ ආහාර අනුභවය👷‍♀💸🍽",
                       style: TextStyle(
                         fontSize: 28,
                         fontWeight: FontWeight.bold,

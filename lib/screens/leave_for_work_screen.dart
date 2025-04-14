@@ -58,7 +58,7 @@ class _LeaveForWorkScreenState extends State<LeaveForWorkScreen> {
                   const SizedBox(height: 80),
                   const Center(
                     child: Text(
-                      "රැකි රක්ෂා සදහා පිටත්ව යෑම",
+                      "රැකි රක්ෂා සදහා පිටත්ව යෑම🚗",
                       style: TextStyle(
                         fontSize: 28,
                         fontWeight: FontWeight.bold,

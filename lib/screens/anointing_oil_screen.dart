@@ -58,7 +58,7 @@ class _AnointingOilScreenState extends State<AnointingOilScreen> {
                   const SizedBox(height: 80),
                   const Center(
                     child: Text(
-                      "හිස තෙල් ගෑම",
+                      "හිස තෙල් ගෑම🪔",
                       style: TextStyle(
                         fontSize: 28,
                         fontWeight: FontWeight.bold,

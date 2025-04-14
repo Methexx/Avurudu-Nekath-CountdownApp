@@ -46,16 +46,15 @@ class _HomeScreenState extends State<HomeScreen> {
           style: const TextStyle(
             fontSize: 36,
             fontWeight: FontWeight.bold,
-            color: Colors.white, // changed from orange
+            color: Colors.white,
           ),
         ),
-
         const SizedBox(height: 4),
         Text(
           label,
           style: const TextStyle(
             fontSize: 16,
-            color: Colors.white, // changed from gray
+            color: Colors.white,
           ),
         ),
       ],
@@ -82,7 +81,6 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
-
           SafeArea(
             child: Column(
               children: [
@@ -105,11 +103,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                     shadows: [
-                      Shadow(
-                        blurRadius: 4,
-                        color: Colors.black54,
-                        offset: Offset(1, 1),
-                      )
+                      Shadow(blurRadius: 4, color: Colors.black54, offset: Offset(1, 1))
                     ],
                   ),
                 ),
@@ -122,15 +116,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                     shadows: [
-                      Shadow(
-                        blurRadius: 4,
-                        color: Colors.black54,
-                        offset: Offset(1, 1),
-                      )
+                      Shadow(blurRadius: 4, color: Colors.black54, offset: Offset(1, 1))
                     ],
                   ),
                 ),
-
                 const Text(
                   'Happy New Year!',
                   textAlign: TextAlign.center,
@@ -139,11 +128,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                     shadows: [
-                      Shadow(
-                        blurRadius: 4,
-                        color: Colors.black54,
-                        offset: Offset(1, 1),
-                      )
+                      Shadow(blurRadius: 4, color: Colors.black54, offset: Offset(1, 1))
                     ],
                   ),
                 ),
@@ -156,19 +141,13 @@ class _HomeScreenState extends State<HomeScreen> {
                     fontWeight: FontWeight.w600,
                     color: Colors.white,
                     shadows: [
-                      Shadow(
-                        blurRadius: 4,
-                        color: Colors.black45,
-                        offset: Offset(1, 1),
-                      )
+                      Shadow(blurRadius: 4, color: Colors.black45, offset: Offset(1, 1)),
                     ],
                   ),
                 ),
-
                 const SizedBox(height: 10),
 
-                // Styled countdown timer
-                // Styled countdown timer with transparent background and gray text
+                // Countdown timer
                 Container(
                   padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
@@ -195,7 +174,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
 
-
                 if (isOver)
                   const Padding(
                     padding: EdgeInsets.only(top: 10),
@@ -211,29 +189,42 @@ class _HomeScreenState extends State<HomeScreen> {
 
                 const Spacer(),
 
-                // Button
+                // Button and copyright message
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 24),
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color.fromARGB(255, 40, 39, 38),
-                      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const NekathListScreen(),
+                  padding: const EdgeInsets.only(bottom: 8),
+                  child: Column(
+                    children: [
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color.fromARGB(255, 40, 39, 38),
+                          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                         ),
-                      );
-                    },
-                    child: const Text(
-                      'නැකත් පත්‍රය',
-                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
-                    ),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const NekathListScreen(),
+                            ),
+                          );
+                        },
+                        child: const Text(
+                          'නැකත් පත්‍රය',
+                          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      const Text(
+                        "© 2025 Developed by Methum Pathirana",
+                        style: TextStyle(
+                          color: Colors.white70,
+                          fontSize: 14,
+                        ),
+                      ),
+                      const SizedBox(height: 10),
+                    ],
                   ),
-                )
+                ),
               ],
             ),
           ),

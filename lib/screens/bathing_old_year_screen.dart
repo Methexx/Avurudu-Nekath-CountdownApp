@@ -58,7 +58,7 @@ class _BathingOldYearScreenState extends State<BathingOldYearScreen> {
                   const SizedBox(height: 80),
                   const Center(
                     child: Text(
-                      "පරණ අවුරුද්ද සදහා ස්නානය",
+                      "පරණ අවුරුද්ද සදහා ස්නානය🚿",
                       style: TextStyle(
                         fontSize: 28,
                         fontWeight: FontWeight.bold,

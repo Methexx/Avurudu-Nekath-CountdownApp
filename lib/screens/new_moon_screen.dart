@@ -58,7 +58,7 @@ class _NewMoonScreenState extends State<NewMoonScreen> {
                   const SizedBox(height: 80),
                   const Center(
                     child: Text(
-                      "නව සද බැලීම",
+                      "නව සද බැලීම🌕",
                       style: TextStyle(
                         fontSize: 28,
                         fontWeight: FontWeight.bold,

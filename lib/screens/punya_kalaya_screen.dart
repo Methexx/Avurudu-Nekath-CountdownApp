@@ -58,7 +58,7 @@ class _PunyaKalayaScreenState extends State<PunyaKalayaScreen> {
                   const SizedBox(height: 80),
                   const Center(
                     child: Text(
-                      "පුණ්‍ය කාලය",
+                      "පුණ්‍ය කාලය☸",
                       style: TextStyle(
                         fontSize: 28,
                         fontWeight: FontWeight.bold,

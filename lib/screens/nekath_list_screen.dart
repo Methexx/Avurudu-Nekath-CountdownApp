@@ -34,42 +34,42 @@ class NekathListScreen extends StatelessWidget {
               return NekathCard(
                 nekath: nekath,
                 onTap: () {
-                  if (nekath.title == "නව සද බැලීම🌞") {
+                  if (nekath.title == "නව සද බැලීම") {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => const NewMoonScreen()),
                     );
-                  } else if (nekath.title == "පරණ අවුරුද්ද සදහා ස්නානය🌞") {
+                  } else if (nekath.title == "පරණ අවුරුද්ද සදහා ස්නානය") {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => const BathingOldYearScreen()),
                     );
-                  } else if (nekath.title == "අළුත් අවුරුදු උදාව🌞") {
+                  } else if (nekath.title == "පුණ්‍ය කාලය") {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const PunyaKalayaScreen()),
+                    );  
+                  } else if (nekath.title == "අළුත් අවුරුදු උදාව") {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => const DawnNewYearScreen()),
                     );
-                  } else if (nekath.title == "පුණ්‍ය කාලය🌞") {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const PunyaKalayaScreen()),
-                    );
-                  } else if (nekath.title == "අහාර පිසීම🌞") {
+                  } else if (nekath.title == "අහාර පිසීම") {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => const PrepareMealsScreen()),
                     );
-                  } else if (nekath.title == "වැඩ ඇල්ලීම, ගණුදෙනු කිරීම හා ආහාර අනුභවය🌞") {
+                  } else if (nekath.title == "වැඩ ඇල්ලීම, ගණුදෙනු කිරීම හා ආහාර අනුභවය") {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => const CommenceWorkScreen()),
                     );
-                  } else if (nekath.title == "හිත තෙල් ගෑම🌞") {
+                  } else if (nekath.title == "හිත තෙල් ගෑම") {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => const AnointingOilScreen()),
                     );
-                  } else if (nekath.title == "රැකීරක්ශා සදහා පිටත්ව යාම🌞") {
+                  } else if (nekath.title == "රැකීරක්ශා සදහා පිටත්ව යාම") {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => const LeaveForWorkScreen()),

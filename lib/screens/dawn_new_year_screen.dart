@@ -58,7 +58,7 @@ class _DawnNewYearScreenState extends State<DawnNewYearScreen> {
                   const SizedBox(height: 80),
                   const Center(
                     child: Text(
-                      "අලුත් අවුරුදු උදාව",
+                      "අලුත් අවුරුදු උදාව🌞",
                       style: TextStyle(
                         fontSize: 28,
                         fontWeight: FontWeight.bold,
