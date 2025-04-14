@@ -56,4 +56,9 @@ lib/
 ✨ To-Do
  Real-time countdown
 
+## 📱 Download
+
+Click the link below to download and install the app:
+
+[⬇️ Download Avurudu Nekath Countdown App](https://github.com/Methexx/Avurudu-Nekath-CountdownApp/releases/download/v1.0.0/app-release.apk)
 
